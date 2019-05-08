@@ -1,4 +1,5 @@
 FROM node:10.12.0-alpine
+RUN mkdir /waitfile
 ADD ./waitfile /waitfile
 RUN chmod +x /waitfile
 WORKDIR /home/nodejs/app

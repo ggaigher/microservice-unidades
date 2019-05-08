@@ -1,7 +1,6 @@
 FROM node:10.12.0-alpine
-RUN mkdir /waitfile
-COPY ./waitfile /waitfile
-RUN chmod +x /waitfile
+COPY docker/wait /wait
+RUN chmod +x /wait
 WORKDIR /home/nodejs/app
 ENV NODE_ENV prod
 COPY package*.json ./
@@ -9,4 +8,4 @@ RUN npm install --only=production
 ARG port=80
 EXPOSE $port
 COPY . ./
-CMD /waitfile && node index.js
+CMD /wait && node index.js

@@ -1,5 +1,5 @@
 FROM node:10.12.0-alpine
-COPY ./waitfile /waitfile
+ADD ./waitfile /waitfile
 RUN chmod +x /waitfile
 WORKDIR /home/nodejs/app
 ENV NODE_ENV prod
